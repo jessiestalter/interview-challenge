@@ -60,6 +60,10 @@ const TABLE_COLUMNS = [
     headerName: 'Percent',
     width: 160,
     headerAlign: 'center',
+    valueFormatter: (params) => {
+      const formattedValue = Number(params.value * 100).toLocaleString();
+      return `${formattedValue}%`;
+    },
   },
   {
     field: 'density',
@@ -96,8 +100,9 @@ export default class App extends Component {
     return (
       <>
         {/* App Bar */}
-        <AppBar position='static'>
+        <AppBar position='static' style={{ backgroundColor: LEXCELON_GREEN }}>
           <Toolbar>
+            <img src={LexcelonLogo} alt="lexcelonLogo" height="75px"/>
           </Toolbar>
         </AppBar>
 

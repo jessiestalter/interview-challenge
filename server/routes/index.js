@@ -6,6 +6,9 @@ const fs = require('fs');
 const data = fs.readFileSync('./data/states.json');
 const states = JSON.parse(data);
 
-// TODO: Create a GET '/states' route that returns the JSON list states constant
+// a GET '/states' route that returns the JSON list states constant
+router.get('/states', function (req, res) {
+    res.send(states)
+})
 
 module.exports = router;
